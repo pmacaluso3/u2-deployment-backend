@@ -9,6 +9,12 @@ const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
 let sequelize;
+
+console.log('!!!!!');
+console.log(config);
+console.log(config.use_env_variable);
+console.log(process.env[config.use_env_variable]);
+
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
